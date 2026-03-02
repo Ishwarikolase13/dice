@@ -11,6 +11,32 @@
     <img src="./../images/dice.jpeg" height="200px" width="200px"/>&nbsp;
 
 
+<body>
 
+<div class="dice-container">
+    <h1>🎲 Dice Roller</h1>
+    <div class="dice" id="dice">🎲</div>
+    <button onclick="rollDice()">Roll Dice</button>
+    <p id="result"></p>
+</div>
 
+<script>
+    function rollDice() {
+        let diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+        let randomNumber = Math.floor(Math.random() * 6);
+
+        let dice = document.getElementById("dice");
+        let result = document.getElementById("result");
+
+        dice.style.transform = "rotate(360deg)";
+        dice.innerHTML = diceFaces[randomNumber];
+        result.innerHTML = "You rolled: " + (randomNumber + 1);
+
+        setTimeout(() => {
+            dice.style.transform = "rotate(0deg)";
+        }, 300);
+    }
+</script>
+
+</body>
 </html>
